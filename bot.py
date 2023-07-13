@@ -18,14 +18,14 @@ async def on_ready():
     print(f'{bot.user.name} has connected to Discord!')
 
 
-# / command that randomly selects a message
+# / command that randomly sends cakes :3
 @bot.slash_command(name='cake', description="cake!!!")
 async def kak(ctx):
     response = random.choice(kuchenn)
     await ctx.send(response)
     await ctx.respond("cake send :3", ephemeral=True)
 
-
+# / command that randomly sends a cat meme :>
 @bot.slash_command(name='glalacat', description="cet!!!")
 async def kak(ctx):
     response = random.choice(cat)
@@ -50,12 +50,12 @@ async def kick(ctx: SlashContext, member: discord.Member, *, reason=None):
     print(f"{member} got kicked from {ctx.author} because of {reason}!")
 """
 
-# when member joins server he gets a dm
+# when member joins server he gets a dm :p
 @bot.event
 async def on_member_join(member: discord.member):
     await member.send(f'Hi {member.name}, welcome to my Discord server!\nif you need something just ask my creator!')
 
-
+# this is for loading in all modules :3
 for filename in os.listdir("modules"):
     if filename.endswith(".py"):
         bot.load_extension(f"modules.{filename[:-3]}")
@@ -63,7 +63,3 @@ for filename in os.listdir("modules"):
 bot.run(TOKEN)
 
 #73 32 108 111 118 101 32 117 32 90 111 101
-
-"""
-Musik slash commands machen
-"""
