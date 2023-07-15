@@ -18,20 +18,6 @@ async def on_ready():
     print(f'{bot.user.name} has connected to Discord!')
 
 
-# / command that randomly sends cakes :3
-@bot.slash_command(name='cake', description="cake!!!")
-async def kak(ctx):
-    response = random.choice(kuchenn)
-    await ctx.send(response)
-    await ctx.respond("cake send :3", ephemeral=True)
-
-# / command that randomly sends a cat meme :>
-@bot.slash_command(name='glalacat', description="cet!!!")
-async def kak(ctx):
-    response = random.choice(cat)
-    await ctx.send(response)
-    await ctx.respond("cet send :3", ephemeral=True)
-
 # this is for loading in all modules :3
 if __name__ == "__main__":
     for filename in os.listdir("modules"):
