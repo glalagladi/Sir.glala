@@ -9,6 +9,7 @@ class onmemberjoin(commands.Cog):
         self.bot = bot
         self.chan = 0
 
+    #initializes the channel for the welcome message :P
     @slash_command()
     async def initchannel(self, ctx, channel: Option(discord.TextChannel)):
         await ctx.respond(f"{channel} is now the welcome channel :>",ephemeral=True)
