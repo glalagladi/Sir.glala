@@ -44,21 +44,23 @@ async def ban(ctx, member: discord.Member, *, reason=None):
 # / kick command
 @commands.has_permissions(kick_members=True)
 @bot.slash_command(name='kick', description='this command lets you kick members (only with permissions)')
-async def kick(ctx: SlashContext, member: discord.Member, *, reason=None):
+async def kick(ctx, member: discord.Member, *, reason=None):
     await member.kick(reason=reason)
     await ctx.send(f'Hmm {member} got kicked!!!\nReason: {reason}')
     print(f"{member} got kicked from {ctx.author} because of {reason}!")
-"""
+
 
 # when member joins server he gets a dm :p
 @bot.event
 async def on_member_join(member: discord.member):
     await member.send(f'Hi {member.name}, welcome to my Discord server!\nif you need something just ask my creator!')
+"""
 
 # this is for loading in all modules :3
-for filename in os.listdir("modules"):
-    if filename.endswith(".py"):
-        bot.load_extension(f"modules.{filename[:-3]}")
+if __name__ == "__main__":
+    for filename in os.listdir("modules"):
+        if filename.endswith(".py"):
+            bot.load_extension(f"modules.{filename[:-3]}")
 
 bot.run(TOKEN)
 
