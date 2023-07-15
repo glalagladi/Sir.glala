@@ -19,7 +19,7 @@ class onmemberjoin(commands.Cog):
     async def on_member_join(self, member):
         embed = discord.Embed(
             title=f"Welcome!",
-            description=f"I hope you'll have a nice and comfy {member.mention}",
+            description=f"I hope you'll have a nice and comfy arrival {member.mention}! :>",
             color=0xFFFFFF
         )
         channel = await self.bot.fetch_channel(self.chan)
