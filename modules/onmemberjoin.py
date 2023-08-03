@@ -10,11 +10,13 @@ class onmemberjoin(commands.Cog):
         self.chan = 0
 
     #initializes the channel for the welcome message :P
+    @discord.default_permissions(manage_channels=True)
     @slash_command()
     async def initchannel(self, ctx, channel: Option(discord.TextChannel)):
         await ctx.respond(f"{channel} is now the welcome channel :>",ephemeral=True)
         self.chan = channel.id
 
+    #if a member joins this will be executed
     @commands.Cog.listener()
     async def on_member_join(self, member):
         embed = discord.Embed(
@@ -22,7 +24,7 @@ class onmemberjoin(commands.Cog):
             description=f"I hope you'll have a nice and comfy arrival {member.mention}! :>",
             color=0xFFFFFF
         )
-        channel = await self.bot.fetch_channel(self.chan)
+        channel = await self.bot.fetch_channel(self.chan)        
         await channel.send(embed=embed)
 
 def setup(bot):

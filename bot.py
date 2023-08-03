@@ -10,13 +10,11 @@ TOKEN = os.getenv('DISCORD_TOKEN')
 intents = discord.Intents.all()
 bot = discord.Bot(command_prefix='?', intents=intents)
 
-
 # sends a message when the bot is online
 @bot.event
 async def on_ready():
     await bot.change_presence(activity=discord.Game('made by glalagladi'))
     print(f'{bot.user.name} has connected to Discord!')
-
 
 # this is for loading in all modules :3
 if __name__ == "__main__":
