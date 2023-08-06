@@ -15,6 +15,12 @@ class slashes(commands.Cog):
         await ctx.send(response)
         await ctx.respond("cake send :3", ephemeral=True)
 
+    @slash_command(name='soup', description="gives you a nice little soup!")
+    async def soup(self, ctx):
+        response = random.choice(soup)
+        await ctx.send(respond)
+        await ctx.respond("soup send :3", ephemeral=True)
+
     # / command that randomly sends a cat meme :>
     @slash_command(name='glalacat', description="cet!!!")
     async def glalacet(self, ctx):

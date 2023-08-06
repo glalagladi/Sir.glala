@@ -134,3 +134,9 @@ femboy = [
     "maybe ¯\_(ツ)_/¯",
     "yesss *nods*"
 ]
+
+soup = [
+    "here is your soup",
+    "here is your soup",
+    "sorry I don't have any soup anymore ¯\_(ツ)_/¯"
+]
