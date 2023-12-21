@@ -20,7 +20,7 @@ class administration(commands.Cog):
         await ctx.respond(f"{member} got kicked from {ctx.author} because of {reason}!")
         print(f"{member} got kicked from {ctx.author} because of {reason}!")
 
-    # / kick command
+    # / ban command
     @slash_command(name='ban', description='this command lets you kick members (only with permissions)')
     @discord.default_permissions(ban_members=True)
     async def ban(self, ctx, member: Option(discord.Member), *, reason=None):
@@ -31,7 +31,6 @@ class administration(commands.Cog):
         
         await ctx.respond(f"{member} got banned from {ctx.author} because of {reason}!")
         print(f"{member} got banned from {ctx.author} because of {reason}!")
-
 
 def setup(bot):
     bot.add_cog(administration(bot))
